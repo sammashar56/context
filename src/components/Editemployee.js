@@ -2,7 +2,7 @@ import React, { Fragment, useState, useContext, useEffect } from "react";
 import { GlobalContext } from "../context/GlobalState";
 import { useHistory, Link } from "react-router-dom";
 
-export const EditEmployee = route =>{
+export const EditEmployee = (route) =>{
     let history = useHistory();
     const {employees, editEmployee} = useContext(GlobalContext);
     const[selectedUser, setSelectedUser]= useState({
@@ -17,6 +17,7 @@ export const EditEmployee = route =>{
         const employeeId = currentUserId;
         const selectedUser = employees.find(emp =>emp.id === parseInt(employeeId));
         setSelectedUser (selectedUser);
+        // eslint-disable-next-line
     }, []);
     const onSubmit = e => {
         e.preventDefault();
@@ -31,7 +32,7 @@ export const EditEmployee = route =>{
         alert("id do not match !");
     }
     return(
-        <fragment>
+        <Fragment>
             <div className="w-full max-w-sm container mt-20 mx-auto">
         <form onSubmit={onSubmit}>
           <div className="w-full mb-5">
@@ -89,7 +90,7 @@ export const EditEmployee = route =>{
           </div>
         </form>
       </div>
-        </fragment>
+        </Fragment>
     );
 
 };

@@ -3,11 +3,11 @@ import { GlobalContext } from "../context/GlobalState";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-export const AddEmployee = ()=>{
+export const Addemployee = ()=>{
     const [name, setName] = useState("");
     const [location, setLocation] = useState("");
     const [designation, setDesignation] = useState("");
-    const {addEmployee, employees} = useState(GlobalContext)
+    const {addEmployee, employees} = useContext(GlobalContext)
     let history = useHistory();
 
 
@@ -24,7 +24,7 @@ export const AddEmployee = ()=>{
     };
 
     return (
-        <fragment>
+        <Fragment>
             <div classname="w-full max-w-sm container mt-20 mx-auto">
                 <form onSubmit={onSubmit}>
                     <div classname="w-full mb-5">
@@ -82,6 +82,6 @@ export const AddEmployee = ()=>{
           </div>
                 </form>
             </div>
-        </fragment>
+        </Fragment>
     )
 }

@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "eslint": "^6.8.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
@@ -34,7 +30,13 @@
       "last 1 safari version"
     ]
   },
-  "main": "index.js",
   "author": "mashar",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "react-scripts": "0.8.4",
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.24.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0"
+  }
 }
