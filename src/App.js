@@ -13,8 +13,8 @@ function App() {
       <switch>
         <Route path="/" component={Home} exact />
         <Route path="add" component={AddEmployee} exact />
-        <Route path="/edit/:id" component={EditEmployee} />
-        
+        <Route path="/edit/:id" component={EditEmployee} exact />
+
       </switch>
     </GlobalProvider>
     
