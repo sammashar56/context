@@ -1,5 +1,5 @@
 import React, {createContext, useReducer} from "react";
-import Appreducer from "./Appreducer";
+import AppReducer from "./AppReducer";
 
 const initialState = {
     employees: [
@@ -16,7 +16,7 @@ export const GlobalContext = createContext(initialState);
 export const GlobalProvider = ({children}) =>{
     const [state, dispatch] = useReducer (AppReducer, initialState);
 
-    function RemoveEmployee (id) {
+    function removeEmployee (id) {
         dispatch({
             type: "REMOVE_EMPLOYEE",
             payload:id
@@ -28,7 +28,7 @@ export const GlobalProvider = ({children}) =>{
             payload:employees
         });
     }
-    function editEmployee(id) {
+    function editEmployee(employees) {
         dispatch({
             type:"EDIT_EMPLOYEE",
             payload: employees
@@ -41,7 +41,6 @@ export const GlobalProvider = ({children}) =>{
             removeEmployee,
             addEmployee,
             editEmployee
-
         }}
     >{children}
     </GlobalContext.Provider>

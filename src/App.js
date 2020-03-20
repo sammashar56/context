@@ -1,11 +1,11 @@
 import React from 'react';
 import {Home} from './components/home';
 import {AddEmployee} from './components/Addemployees';
-import {EditEmployee} from './components/EditEmployees';
+import {EditEmployee} from './components/Editemployees';
 import {Route, Switch} from 'react-router-dom';
 import 'stylesheet/style.css';
 
- import {GlobalState} from './context/GlobalState';
+ import {GlobalProvider} from './context/GlobalState';
 
 function App() {
   return (

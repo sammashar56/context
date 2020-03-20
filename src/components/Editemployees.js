@@ -2,9 +2,9 @@ import React, { Fragment, useState, useContext, useEffect } from "react";
 import { GlobalContext } from "../context/GlobalState";
 import { useHistory, Link } from "react-router-dom";
 
-export const Editemployee = route =>{
+export const EditEmployee = route =>{
     let history = useHistory();
-    const {employees, editEmployees} = useContext(GlobalContext);
+    const {employees, editEmployee} = useContext(GlobalContext);
     const[selectedUser, setSelectedUser]= useState({
         id:null,
         name:"",
@@ -15,7 +15,7 @@ export const Editemployee = route =>{
 
     useEffect(() => {
         const employeeId = currentUserId;
-        const SelectedUser = employees.find(emp =>emp.id === parseInt(employeeId));
+        const selectedUser = employees.find(emp =>emp.id === parseInt(employeeId));
         setSelectedUser (selectedUser);
     }, []);
     const onSubmit = e => {
@@ -24,8 +24,8 @@ export const Editemployee = route =>{
         history.push("/");
     };
 
-    const handleChange = (userKey, value) =>
-    SelectedUser ({ ...selectedUser, [userKey]:value});
+    const handleOnChange = (userKey, value) =>
+    selectedUser ({ ...selectedUser, [userKey]:value});
 
     if(!selectedUser || !selectedUser.id){
         alert("id do not match !");

@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 export const AddEmployee = ()=>{
     const [name, setName] = useState("");
     const [location, setLocation] = useState("");
-    const [Designation, setDesignation] = usestate("");
-    const {addemployee, employees} = useState(GlobalContext)
+    const [designation, setDesignation] = useState("");
+    const {addEmployee, employees} = useState(GlobalContext)
     let history = useHistory();
 
 
